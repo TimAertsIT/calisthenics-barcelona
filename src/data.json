@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "name": "Montjuic",
+        "image": "/assets/images/montjuic.png",
+        "equipment": [
+            "Bars",
+            "Parallels",
+            "Low pushup bar",
+            "Rings"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Gran Via",
+        "image": "/assets/images/granvia.png",
+        "equipment": [
+            "Bars",
+            "Parallels",
+            "Push machine",
+            "Abs equipment"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Poblenou",
+        "image": "/assets/images/poblenou.png",
+        "equipment": [
+            "Bars",
+            "Parallels",
+            "Push machine",
+            "Abs equipment"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Barceloneta",
+        "image": "/assets/images/barceloneta.png",
+        "equipment": [
+            "Bars",
+            "Parallels",
+            "Push machine",
+            "Abs equipment"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Hotel W",
+        "image": "/assets/images/hotelw.png",
+        "equipment": [
+            "Bars",
+            "Parallels",
+            "Push machine",
+            "Abs equipment"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Diagonal",
+        "image": "/assets/images/diagonal.png",
+        "equipment": [
+            "Bars",
+            "Parallels",
+            "Push machine",
+            "Abs equipment"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Nou Barris",
+        "image": "/assets/images/noubarris.png",
+        "equipment": [
+            "Bars",
+            "Parallels",
+            "Push machine",
+            "Abs equipment"
+        ]
+    }
+]
