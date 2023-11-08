@@ -1,7 +1,23 @@
 import { useState } from 'react';
 import { StyledBackground, StyledCard, StyledH1, StyledP, StyledInput, StyledButton, StyledForm } from './Register.styles';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+
+
 
 const Register = () => {
+    const firebaseConfig = {
+        apiKey: "AIzaSyCzoqCWg6-4eqavpZvzAB_xJeYwQ3cKGMQ",
+        authDomain: "calisthenics-barcelona.firebaseapp.com",
+        projectId: "calisthenics-barcelona",
+        storageBucket: "calisthenics-barcelona.appspot.com",
+        messagingSenderId: "804554220033",
+        appId: "1:804554220033:web:7e6cc4e2670c88c9ba9600",
+        measurementId: "G-1G0DJ4K587"
+    };
+
+    const app = initializeApp(firebaseConfig);
+
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -9,16 +25,21 @@ const Register = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const user = { email, password, name };
-        let users = JSON.parse(localStorage.getItem('users')) || [];
-        users.push(user);
-        localStorage.setItem('users', JSON.stringify(users));
-        setEmail('');
-        setPassword('');
-        setName('');
-        alert("You were successfully registered and will be brought to the login page")
-        window.location.href = '../login';
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // The user has been registered and is signed in!
+                alert("You were successfully registered and will be brought to the login page");
+                window.location.href = '../login';
+            })
+            .catch((error) => {
+                // Something went wrong. Inspect the error code and provide feedback as appropriate.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(`Error: ${errorCode} ${errorMessage}`);
+            });
     }
+
     return (
         <>
             <StyledBackground>

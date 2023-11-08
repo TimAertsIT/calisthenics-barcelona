@@ -6,8 +6,16 @@ const Navigation = ({ isAuthenticated, handleLogout }) => {
         <NavigationWrapper>
             <StyledDiv>
                 <Link to="/">Homepage</Link>
-                <Link to="/register">Register Page</Link>
-                <Link to="/login">Login Page</Link>
+                <Link to="/register"><p>Register</p></Link>
+                {isAuthenticated ? (
+                    <a href="#" onClick={handleLogout}>
+                        Logout
+                    </a>
+                ) : (
+                    <Link to="/login">
+                        <p>Login</p>
+                    </Link>
+                )}
             </StyledDiv>
         </NavigationWrapper>
     );
