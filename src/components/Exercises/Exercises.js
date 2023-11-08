@@ -4,16 +4,24 @@ import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer } from './Exe
 import data from "../../data.json";
 import { ParkName, ParkImage, Park, ParksContainer } from "../Parks/Parks.styles";
 
-function Exercises() {
+function Exercises({ selectedPark }) {
     const [selectedGroup, setSelectedGroup] = useState(null);
     const [recommendedParks, setRecommendedParks] = useState([]);
     const [selectedExercises, setSelectedExercises] = useState([]);
 
     const muscleGroups = [...new Set(exercises.flatMap(exercise => exercise.trains))];
 
-    const filteredExercises = selectedGroup
-        ? exercises.filter(exercise => exercise.trains.includes(selectedGroup))
-        : exercises;
+    let filteredExercises = exercises;
+    if (selectedGroup) {
+        filteredExercises = filteredExercises.filter(exercise => exercise.trains.includes(selectedGroup));
+    }
+    if (selectedPark) {
+        filteredExercises = filteredExercises.filter(exercise =>
+            exercise.equipment.some(equip => selectedPark.equipment.includes(equip))
+        );
+    }
+
+
 
     const requiredEquipment = [...new Set(selectedExercises.flatMap(exercise => exercise.equipment))];
 
@@ -56,7 +64,7 @@ function Exercises() {
             </ExercisesContainer>
 
             <div>
-                <h2>Selected Exercises</h2>
+                {selectedExercises.length > 0 && <h2>Selected Exercises</h2>}
                 {selectedExercises.map((exercise, index) => (
                     <div key={index}>
                         <p>{exercise.name}</p>
@@ -70,7 +78,7 @@ function Exercises() {
             </div>
 
             <ParksContainer>
-                <h1>Recommended parks</h1>
+                {recommendedParks.length > 0 && <h1>Recommended parks</h1>}
                 {recommendedParks.map((item) => (
                     <Park key={item.id}>
                         <ParkName>{item.name}</ParkName>

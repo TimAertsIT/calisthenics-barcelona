@@ -17,8 +17,6 @@
         "name": "Gran Via",
         "image": "/assets/images/granvia.png",
         "equipment": [
-            "Bars",
-            "Parallels",
             "Push machine",
             "Abs equipment"
         ],

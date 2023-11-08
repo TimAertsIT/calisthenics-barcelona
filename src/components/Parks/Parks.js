@@ -1,7 +1,7 @@
 import { ParkName, ParkImage, Park, ParksContainer } from './Parks.styles';
 import data from "../../data.json";
 
-function Parks() {
+function Parks({ selectedPark, setSelectedPark }) {
     return (
         <div>
             <ParksContainer>
@@ -14,6 +14,9 @@ function Parks() {
                                 <li key={index}>{equip}</li>
                             ))}
                         </ul>
+                        <button onClick={() => setSelectedPark(selectedPark === item ? null : item)}>
+                            {selectedPark === item ? 'Deselect this park' : 'Select this park'}
+                        </button>
                     </Park>
                 ))}
             </ParksContainer>
@@ -22,3 +25,5 @@ function Parks() {
 }
 
 export default Parks;
+
+
