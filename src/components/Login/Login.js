@@ -58,7 +58,7 @@ const Login = ({ setIsAuthenticated }) => {
             <StyledBackground>
                 <StyledCard>
                     <StyledH1>Enter your email</StyledH1>
-                    <StyledP>Login to your account. If your email is not recognized, you will be asked to register first. </StyledP>
+                    <StyledP>Login to your account </StyledP>
                     <StyledInput
                         type="email"
                         placeholder="Email"

@@ -20,8 +20,8 @@ function ParksMap() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             />
-            {data.map((park) => (
-                <Marker position={[park.lat, park.lng]}>
+            {data.map((park, index) => (
+                <Marker key={index} position={[park.lat, park.lng]}>
                     <Popup>
                         {park.name}
                         <ParkImage src={process.env.PUBLIC_URL + park.image} alt={park.name} />

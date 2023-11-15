@@ -13,7 +13,7 @@ function Homepage({ isAuthenticated, handleLogout }) {
             <h1>Parks</h1>
             <Parks selectedPark={selectedPark} setSelectedPark={setSelectedPark} />
             <h1>Exercises</h1>
-            <Exercises selectedPark={selectedPark} />
+            <Exercises selectedPark={selectedPark} isAuthenticated={isAuthenticated} />
             <ParksMap />
         </div>
     );

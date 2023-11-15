@@ -16,6 +16,7 @@ const Navigation = ({ isAuthenticated, handleLogout }) => {
                         <p>Login</p>
                     </Link>
                 )}
+                <Link to="/mytrainings">My Trainings</Link>
             </StyledDiv>
         </NavigationWrapper>
     );
