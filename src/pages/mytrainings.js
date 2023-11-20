@@ -7,7 +7,7 @@ function MyTrainings({ isAuthenticated, handleLogout }) {
     return (
         <div>
             <Navigation isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
-            <Trainings />
+            <Trainings isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
         </div>
     );
 }

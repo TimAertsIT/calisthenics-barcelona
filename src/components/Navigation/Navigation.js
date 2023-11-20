@@ -2,6 +2,13 @@ import { NavigationWrapper, StyledDiv } from './Navigation.styles';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const Navigation = ({ isAuthenticated, handleLogout }) => {
+    const handleMyTrainingsClick = (e) => {
+        if (!isAuthenticated) {
+            e.preventDefault();
+            alert('Please login first.');
+        }
+    }
+
     return (
         <NavigationWrapper>
             <StyledDiv>
@@ -16,7 +23,7 @@ const Navigation = ({ isAuthenticated, handleLogout }) => {
                         <p>Login</p>
                     </Link>
                 )}
-                <Link to="/mytrainings">My Trainings</Link>
+                <Link to="/mytrainings" onClick={handleMyTrainingsClick}>My Trainings</Link>
             </StyledDiv>
         </NavigationWrapper>
     );

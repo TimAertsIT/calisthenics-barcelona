@@ -61,17 +61,27 @@ function Exercises({ selectedPark, isAuthenticated }) {
 
     const handleSubmit = async () => {
         if (isAuthenticated) {
-            try {
-                const docRef = await addDoc(collection(db, "exerciseLists"), {
-                    name: listName,
-                    exercises: selectedExercises
-                });
-                console.log("Document written with ID: ", docRef.id);
-            } catch (e) {
-                console.error("Error adding document: ", e);
+            const user = auth.currentUser;
+            if (user) {
+                try {
+                    const date = new Date();
+                    const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear().toString().substr(-2)}`;
+                    const docRef = await addDoc(collection(db, "exerciseLists"), {
+                        uid: user.uid,
+                        name: listName,
+                        exercises: selectedExercises,
+                        date: formattedDate
+                    });
+                    console.log("Document written with ID: ", docRef.id);
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+                }
+            } else {
+                console.log("No user is signed in.");
             }
         }
     };
+
 
     return (
         <div>
