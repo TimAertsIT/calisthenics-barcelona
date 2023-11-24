@@ -5,7 +5,8 @@
         "trains": [
             "back"
         ],
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Marine_Pull-ups.jpg/1024px-Marine_Pull-ups.jpg",
+        "image": "https://img.youtube.com/vi/iBtL9nX2qOs/0.jpg",
+        "url": "https://youtu.be/iBtL9nX2qOs",
         "equipment": [
             "Bars",
             "Rings"
@@ -13,12 +14,13 @@
     },
     {
         "id": 2,
-        "name": "Dips",
+        "name": "Dip",
         "trains": [
             "shoulders",
             "chest"
         ],
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Dipexercise.svg/1280px-Dipexercise.svg.png",
+        "image": "https://img.youtube.com/vi/l41SoWZiowI/0.jpg",
+        "url": "https://youtu.be/l41SoWZiowI",
         "equipment": [
             "Parallels"
         ]
@@ -29,11 +31,405 @@
         "trains": [
             "back",
             "chest",
-            "shoulders"
+            "shoulders",
+            "triceps"
         ],
-        "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Muscleup.jpg",
+        "image": "https://img.youtube.com/vi/_iYvlSMgUGE/0.jpg",
+        "url": "https://youtu.be/_iYvlSMgUGE",
         "equipment": [
             "Bars"
         ]
+    },
+    {
+        "id": 4,
+        "name": "One arm pull-up",
+        "trains": [
+            "back"
+        ],
+        "image": "https://img.youtube.com/vi/HZ67gjyQt0E/0.jpg",
+        "url": "https://youtu.be/HZ67gjyQt0E",
+        "equipment": [
+            "Bars",
+            "Rings"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Inverted row",
+        "trains": [
+            "back",
+            "biceps"
+        ],
+        "image": "https://img.youtube.com/vi/n5ubtAH1Glo/0.jpg",
+        "url": "https://youtu.be/n5ubtAH1Glo",
+        "equipment": [
+            "Rings"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Back lever",
+        "trains": [
+            "back",
+            "biceps",
+            "abs"
+        ],
+        "image": "https://img.youtube.com/vi/FZZqbeZti84/0.jpg",
+        "url": "https://youtu.be/FZZqbeZti84",
+        "equipment": [
+            "Bars"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Handstand push-up",
+        "trains": [
+            "shoulders",
+            "triceps"
+        ],
+        "image": "https://img.youtube.com/vi/J72BWjAGzVg/0.jpg",
+        "url": "https://youtu.be/J72BWjAGzVg",
+        "equipment": []
+    },
+    {
+        "id": 8,
+        "name": "Planche",
+        "trains": [
+            "shoulders",
+            "triceps",
+            "biceps"
+        ],
+        "image": "https://img.youtube.com/vi/OmKfROtB45Q/0.jpg",
+        "url": "https://youtu.be/OmKfROtB45Q",
+        "equipment": []
+    },
+    {
+        "id": 9,
+        "name": "Pike push-up",
+        "trains": [
+            "shoulders"
+        ],
+        "image": "https://img.youtube.com/vi/4IQAbNVgPG8/0.jpg",
+        "url": "https://youtu.be/4IQAbNVgPG8",
+        "equipment": []
+    },
+    {
+        "id": 10,
+        "name": "Push-up",
+        "trains": [
+            "shoulders",
+            "chest",
+            "triceps"
+        ],
+        "image": "https://img.youtube.com/vi/1Bj5PPxgEwo/0.jpg",
+        "url": "https://youtu.be/1Bj5PPxgEwo",
+        "equipment": []
+    },
+    {
+        "id": 11,
+        "name": "Incline push-up",
+        "trains": [
+            "shoulders",
+            "chest",
+            "triceps"
+        ],
+        "image": "https://img.youtube.com/vi/0CcVzNxrcdc/0.jpg",
+        "url": "https://youtu.be/0CcVzNxrcdc",
+        "equipment": [
+            "Lower bar"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Decline push-up",
+        "trains": [
+            "shoulders",
+            "chest",
+            "triceps"
+        ],
+        "image": "https://img.youtube.com/vi/PXIpw1JD4qw/0.jpg",
+        "url": "https://youtu.be/PXIpw1JD4qw",
+        "equipment": [
+            "Lower bar"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Bicep curl",
+        "trains": [
+            "biceps"
+        ],
+        "image": "https://img.youtube.com/vi/vByJfI8acOw/0.jpg",
+        "url": "https://youtu.be/vByJfI8acOw",
+        "equipment": [
+            "Parallels"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Chin-up",
+        "trains": [
+            "biceps",
+            "back"
+        ],
+        "image": "https://img.youtube.com/vi/14sXR_nmGKU/0.jpg",
+        "url": "https://youtu.be/14sXR_nmGKU",
+        "equipment": [
+            "Rings",
+            "Bars"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "L-sit",
+        "trains": [
+            "abs"
+        ],
+        "image": "https://img.youtube.com/vi/wuDgmAr2ez8/0.jpg",
+        "url": "https://youtu.be/wuDgmAr2ez8",
+        "equipment": [
+            "Parallels"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Plank",
+        "trains": [
+            "abs"
+        ],
+        "image": "https://img.youtube.com/vi/pSHjTRCQxIw/0.jpg",
+        "url": "https://youtu.be/pSHjTRCQxIw",
+        "equipment": []
+    },
+    {
+        "id": 17,
+        "name": "Knee raises",
+        "trains": [
+            "abs"
+        ],
+        "image": "https://img.youtube.com/vi/S7wAEgrUn6s/0.jpg",
+        "url": "https://youtu.be/S7wAEgrUn6s",
+        "equipment": [
+            "Parallels"
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Toes to bar",
+        "trains": [
+            "abs"
+        ],
+        "image": "https://img.youtube.com/vi/v6dgseykbLI/0.jpg",
+        "url": "https://youtu.be/v6dgseykbLI",
+        "equipment": [
+            "Bars",
+            "Rings"
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Squats",
+        "trains": [
+            "quadriceps",
+            "hamstrings"
+        ],
+        "image": "https://img.youtube.com/vi/drU4Mt5Kskg/0.jpg",
+        "url": "https://youtu.be/drU4Mt5Kskg",
+        "equipment": []
+    },
+    {
+        "id": 20,
+        "name": "Pistol squat",
+        "trains": [
+            "quadriceps"
+        ],
+        "image": "https://img.youtube.com/vi/R1mxpLzYgxM/0.jpg",
+        "url": "https://youtu.be/R1mxpLzYgxM",
+        "equipment": []
+    },
+    {
+        "id": 21,
+        "name": "Bulgarian split squat",
+        "trains": [
+            "quadriceps"
+        ],
+        "image": "https://img.youtube.com/vi/2C-uNgKwPLE/0.jpg",
+        "url": "https://youtu.be/2C-uNgKwPLE",
+        "equipment": [
+            "Lower bar"
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Squat jump",
+        "trains": [
+            "quadriceps",
+            "hamstrings"
+        ],
+        "image": "https://img.youtube.com/vi/72BSZupb-1I/0.jpg",
+        "url": "https://youtu.be/72BSZupb-1I",
+        "equipment": []
+    },
+    {
+        "id": 23,
+        "name": "Sissy squat",
+        "trains": [
+            "quadriceps"
+        ],
+        "image": "https://img.youtube.com/vi/VUiFlZ2FsKA/0.jpg",
+        "url": "https://youtu.be/VUiFlZ2FsKA",
+        "equipment": []
+    },
+    {
+        "id": 24,
+        "name": "Glute bridge",
+        "trains": [
+            "hamstrings",
+            "glute"
+        ],
+        "image": "https://img.youtube.com/vi/8bbE64NuDTU/0.jpg",
+        "url": "https://youtu.be/8bbE64NuDTU",
+        "equipment": []
+    },
+    {
+        "id": 25,
+        "name": "Crab walk",
+        "trains": [
+            "hamstrings",
+            "glute"
+        ],
+        "image": "https://img.youtube.com/vi/I-3r4cl4ahA/0.jpg",
+        "url": "https://youtu.be/I-3r4cl4ahA",
+        "equipment": []
+    },
+    {
+        "id": 26,
+        "name": "Good mornings",
+        "trains": [
+            "hamstrings",
+            "glute"
+        ],
+        "image": "https://img.youtube.com/vi/XVwKRR7_y1k/0.jpg",
+        "url": "https://youtu.be/XVwKRR7_y1k",
+        "equipment": []
+    },
+    {
+        "id": 27,
+        "name": "Single leg glute raise",
+        "trains": [
+            "glute"
+        ],
+        "image": "https://img.youtube.com/vi/AVAXhy6pl7o/0.jpg",
+        "url": "https://youtu.be/AVAXhy6pl7o",
+        "equipment": []
+    },
+    {
+        "id": 28,
+        "name": "Single leg Romanian deadlift",
+        "trains": [
+            "glute"
+        ],
+        "image": "https://img.youtube.com/vi/HtHxnWmMgzM/0.jpg",
+        "url": "https://youtu.be/HtHxnWmMgzM",
+        "equipment": []
+    },
+    {
+        "id": 29,
+        "name": "Calf raises",
+        "trains": [
+            "calves"
+        ],
+        "image": "https://img.youtube.com/vi/cqDMYUaIXvw/0.jpg",
+        "url": "https://youtu.be/cqDMYUaIXvw",
+        "equipment": []
+    },
+    {
+        "id": 30,
+        "name": "Single leg calf raises",
+        "trains": [
+            "calves"
+        ],
+        "image": "https://img.youtube.com/vi/OG3OgpXsirQ/0.jpg",
+        "url": "https://youtu.be/OG3OgpXsirQ",
+        "equipment": []
+    },
+    {
+        "id": 31,
+        "name": "Bent knee calf raises",
+        "trains": [
+            "calves"
+        ],
+        "image": "https://img.youtube.com/vi/NIK_hmryfDg/0.jpg",
+        "url": "https://youtu.be/NIK_hmryfDg",
+        "equipment": []
+    },
+    {
+        "id": 32,
+        "name": "Deep squat calf raises",
+        "trains": [
+            "calves"
+        ],
+        "image": "https://img.youtube.com/vi/ymY1PMD59ug/0.jpg",
+        "url": "https://youtu.be/ymY1PMD59ug",
+        "equipment": []
+    },
+    {
+        "id": 33,
+        "name": "Calf jumps",
+        "trains": [
+            "calves"
+        ],
+        "image": "https://img.youtube.com/vi/VYq00wVStOA/0.jpg",
+        "url": "https://youtu.be/VYq00wVStOA",
+        "equipment": []
+    },
+    {
+        "id": 34,
+        "name": "Front lever",
+        "trains": [
+            "back",
+            "abs"
+        ],
+        "image": "https://img.youtube.com/vi/5g8-sj-8snc/0.jpg",
+        "url": "https://youtu.be/5g8-sj-8snc",
+        "equipment": [
+            "Bars"
+        ]
+    },
+    {
+        "id": 35,
+        "name": "Human flag",
+        "trains": [
+            "back",
+            "abs",
+            "shoulders"
+        ],
+        "image": "https://img.youtube.com/vi/ltBzeofggEM/0.jpg",
+        "url": "https://youtu.be/ltBzeofggEM",
+        "equipment": [
+            "Horizontal bars"
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Burpee",
+        "trains": [
+            "chest",
+            "abs",
+            "quadriceps"
+        ],
+        "image": "https://img.youtube.com/vi/ayK7zV9DNRs/0.jpg",
+        "url": "https://youtu.be/ayK7zV9DNRs",
+        "equipment": []
+    },
+    {
+        "id": 37,
+        "name": "Sit-up",
+        "trains": [
+            "abs"
+        ],
+        "image": "https://img.youtube.com/vi/hOY9KS42Bog/0.jpg",
+        "url": "https://youtu.be/hOY9KS42Bog",
+        "equipment": []
     }
 ]

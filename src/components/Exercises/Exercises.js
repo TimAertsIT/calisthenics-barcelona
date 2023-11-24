@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import exercises from '../../exercises.json';
-import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer } from './Exercises.styles';
+import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer, ExerciseButton } from './Exercises.styles';
 import data from "../../data.json";
 import { ParkName, ParkImage, Park, ParksContainer } from "../Parks/Parks.styles";
 import firebase from "firebase/compat/app";
@@ -8,9 +8,8 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
-
-
-
+import Modal from 'react-modal';
+Modal.setAppElement('#root')
 
 function Exercises({ selectedPark, isAuthenticated }) {
     const firebaseConfig = {
@@ -22,6 +21,18 @@ function Exercises({ selectedPark, isAuthenticated }) {
         appId: "1:804554220033:web:7e6cc4e2670c88c9ba9600",
         measurementId: "G-1G0DJ4K587"
     };
+
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [currentExercise, setCurrentExercise] = useState(null);
+
+    const openModal = (exercise) => {
+        setCurrentExercise(exercise);
+        setModalIsOpen(true);
+    }
+
+    const closeModal = () => {
+        setModalIsOpen(false);
+    }
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
@@ -39,9 +50,10 @@ function Exercises({ selectedPark, isAuthenticated }) {
     }
     if (selectedPark) {
         filteredExercises = filteredExercises.filter(exercise =>
-            exercise.equipment.some(equip => selectedPark.equipment.includes(equip))
+            exercise.equipment.length === 0 || exercise.equipment.some(equip => selectedPark.equipment.includes(equip))
         );
     }
+
 
 
 
@@ -82,7 +94,6 @@ function Exercises({ selectedPark, isAuthenticated }) {
         }
     };
 
-
     return (
         <div>
             <div>
@@ -96,18 +107,34 @@ function Exercises({ selectedPark, isAuthenticated }) {
             <ExercisesContainer>
                 {filteredExercises.map((item) => (
                     <Exercise key={item.id}>
+                        <ExerciseImage src={item.image} alt={item.name} onClick={() => openModal(item)} />
                         <ExerciseName>{item.name}</ExerciseName>
-                        <ExerciseImage src={item.image} alt={item.name} />
                         <p>Trains: {item.trains.join(', ')}</p>
                         <p>Equipment: {item.equipment.join(', ')}</p>
-                        <button onClick={() => {
+                        <ExerciseButton onClick={() => {
                             if (!selectedExercises.includes(item)) {
                                 setSelectedExercises([...selectedExercises, item]);
                             }
-                        }}>Add</button>
+                        }}>Add</ExerciseButton>
                     </Exercise>
                 ))}
             </ExercisesContainer>
+
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Exercise Modal"
+            >
+                {currentExercise && (
+                    <>
+                        <h2>{currentExercise.name}</h2>
+                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${currentExercise.url.split('https://youtu.be/')[1]}`} title={currentExercise.name} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <button onClick={closeModal}>Close</button>
+                    </>
+                )}
+            </Modal>
+
+
             <div>
                 {selectedExercises.length > 0 && <h2>Selected Exercises</h2>}
                 {selectedExercises.map((exercise, index) => (
@@ -127,6 +154,7 @@ function Exercises({ selectedPark, isAuthenticated }) {
                     </div>
                 }
             </div>
+
             <ParksContainer>
                 {recommendedParks.length > 0 && <h1>Recommended parks</h1>}
                 {recommendedParks.map((item) => (
@@ -147,3 +175,4 @@ function Exercises({ selectedPark, isAuthenticated }) {
 }
 
 export default Exercises;
+
