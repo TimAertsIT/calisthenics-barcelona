@@ -63,7 +63,9 @@
         "image": "https://img.youtube.com/vi/n5ubtAH1Glo/0.jpg",
         "url": "https://youtu.be/n5ubtAH1Glo",
         "equipment": [
-            "Rings"
+            "Rings",
+            "Bars",
+            "Diagonal bar"
         ]
     },
     {
@@ -431,5 +433,69 @@
         "image": "https://img.youtube.com/vi/hOY9KS42Bog/0.jpg",
         "url": "https://youtu.be/hOY9KS42Bog",
         "equipment": []
+    },
+    {
+        "id": 38,
+        "name": "Diamond push-up",
+        "trains": [
+            "chest",
+            "triceps"
+        ],
+        "image": "https://img.youtube.com/vi/XtU2VQVuLYs/0.jpg",
+        "url": "https://youtu.be/XtU2VQVuLYs",
+        "equipment": []
+    },
+    {
+        "id": 39,
+        "name": "Skin the cat",
+        "trains": [
+            "back",
+            "shoulders",
+            "abs"
+        ],
+        "image": "https://img.youtube.com/vi/QHnpUcVwZOk/0.jpg",
+        "url": "https://youtu.be/QHnpUcVwZOk",
+        "equipment": [
+            "Bars",
+            "Rings"
+        ]
+    },
+    {
+        "id": 40,
+        "name": "Commando pull-up",
+        "trains": [
+            "back",
+            "biceps"
+        ],
+        "image": "https://img.youtube.com/vi/MTpg2fM-_F4/0.jpg",
+        "url": "https://youtu.be/MTpg2fM-_F4",
+        "equipment": [
+            "Bars"
+        ]
+    },
+    {
+        "id": 41,
+        "name": "Wall-sit",
+        "trains": [
+            "quadriceps"
+        ],
+        "image": "https://img.youtube.com/vi/y-wV4Venusw/0.jpg",
+        "url": "https://youtu.be/y-wV4Venusw",
+        "equipment": [
+            "Horizontal bars"
+        ]
+    },
+    {
+        "id": 42,
+        "name": "Triceps extensions",
+        "trains": [
+            "triceps"
+        ],
+        "image": "https://img.youtube.com/vi/gOvZyN_jTBs/0.jpg",
+        "url": "https://youtu.be/gOvZyN_jTBs",
+        "equipment": [
+            "Lower bar",
+            "Rings"
+        ]
     }
 ]
