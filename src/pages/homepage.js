@@ -12,7 +12,6 @@ function Homepage({ isAuthenticated, handleLogout }) {
             <Navigation isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
             <h1>Parks</h1>
             <Parks selectedPark={selectedPark} setSelectedPark={setSelectedPark} />
-            <h1>Exercises</h1>
             <Exercises selectedPark={selectedPark} isAuthenticated={isAuthenticated} />
             <ParksMap />
         </div>

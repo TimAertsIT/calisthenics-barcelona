@@ -54,6 +54,42 @@ export const ExerciseButton = styled.button`
     }
 `;
 
+export const FilterButton = styled.button`
+    display: inline-block;
+    width: auto;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+     background-color: #008080;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: #00FFFF;
+    }
+`;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+`;
+
+export const ExerciseTitle = styled.h1`
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    background: linear-gradient(to right, #008080, #00FFFF);
+    border: none;
+    text-align: center;
+    text-transform: uppercase;
+`;
+
 
 
 

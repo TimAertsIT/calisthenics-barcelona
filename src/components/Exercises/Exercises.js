@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import exercises from '../../exercises.json';
-import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer, ExerciseButton } from './Exercises.styles';
+import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer, ExerciseButton, FilterButton, ButtonContainer, ExerciseTitle } from './Exercises.styles';
 import data from "../../data.json";
 import { ParkName, ParkImage, Park, ParksContainer } from "../Parks/Parks.styles";
 import firebase from "firebase/compat/app";
@@ -96,13 +96,14 @@ function Exercises({ selectedPark, isAuthenticated }) {
 
     return (
         <div>
-            <div>
+            <ExerciseTitle>Exercises</ExerciseTitle>
+            <ButtonContainer>
                 {muscleGroups.map(group => (
-                    <button key={group} onClick={() => setSelectedGroup(group)}>
+                    <FilterButton key={group} onClick={() => setSelectedGroup(group)}>
                         {group}
-                    </button>
+                    </FilterButton>
                 ))}
-            </div>
+            </ButtonContainer>
 
             <ExercisesContainer>
                 {filteredExercises.map((item) => (
