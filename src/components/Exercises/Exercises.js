@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import exercises from '../../exercises.json';
-import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer, ExerciseButton, FilterButton, ButtonContainer, ExerciseTitle, Trains, Train, Equipment, EquipmentItem } from './Exercises.styles';
+import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer, ExerciseButton, FilterButton, ButtonContainer, ExerciseTitle, Trains, Train, Equipment, EquipmentItem, Description, ModalContainer, ExerciseText } from './Exercises.styles';
 import data from "../../data.json";
 import { ParkName, ParkImage, Park, ParksContainer } from "../Parks/Parks.styles";
 import firebase from "firebase/compat/app";
@@ -71,6 +71,10 @@ function Exercises({ selectedPark, isAuthenticated }) {
         }
     }, [selectedExercises]);
 
+
+
+
+
     const handleSubmit = async () => {
         if (isAuthenticated) {
             const user = auth.currentUser;
@@ -97,6 +101,7 @@ function Exercises({ selectedPark, isAuthenticated }) {
     return (
         <div>
             <ExerciseTitle>Exercises</ExerciseTitle>
+            <Description>Filter exercises by muscle group, add them to your own training routine or click the image to see a tutorial </Description>
             <ButtonContainer>
                 {muscleGroups.map(group => (
                     <FilterButton key={group} onClick={() => setSelectedGroup(group)}>
@@ -104,7 +109,6 @@ function Exercises({ selectedPark, isAuthenticated }) {
                     </FilterButton>
                 ))}
             </ButtonContainer>
-
             <ExercisesContainer>
                 {filteredExercises.map((item) => (
                     <Exercise key={item.id}>
@@ -135,10 +139,11 @@ function Exercises({ selectedPark, isAuthenticated }) {
 
 
             <div>
-                {selectedExercises.length > 0 && <h2>Selected Exercises</h2>}
+                {selectedExercises.length > 0 && <ExerciseTitle>Selected Exercises</ExerciseTitle>}
                 {selectedExercises.map((exercise, index) => (
                     <div key={index}>
                         <p>{exercise.name}</p>
+                        <p>{exercise.equipment}</p>
                         <button onClick={() => {
                             const newSelectedExercises = [...selectedExercises];
                             newSelectedExercises.splice(index, 1);
@@ -153,22 +158,28 @@ function Exercises({ selectedPark, isAuthenticated }) {
                     </div>
                 }
             </div>
+            <ExerciseTitle>Recommended parks</ExerciseTitle>
+            <ExercisesContainer>
+                {recommendedParks.length > 0 && (
+                    <>
+                        {recommendedParks.map((item) => (
+                            <Exercise key={item.id}>
+                                <ExerciseName>{item.name}</ExerciseName>
+                                <ExerciseImage src={process.env.PUBLIC_URL + item.image} alt={item.name} />
+                                <ul>
+                                    {item.equipment.map((equip, index) => (
+                                        <li key={index}>{equip}</li>
+                                    ))}
+                                </ul>
+                                <ExerciseText>Matching Equipment: {item.matchingEquipment.join(', ')} ({item.matchingEquipment.length}/{requiredEquipment.length})</ExerciseText>
 
-            <ParksContainer>
-                {recommendedParks.length > 0 && <h1>Recommended parks</h1>}
-                {recommendedParks.map((item) => (
-                    <Park key={item.id}>
-                        <ParkName>{item.name}</ParkName>
-                        <ParkImage src={process.env.PUBLIC_URL + item.image} alt={item.name} />
-                        <ul>
-                            {item.equipment.map((equip, index) => (
-                                <li key={index}>{equip}</li>
-                            ))}
-                        </ul>
-                        <p>Matching Equipment: {item.matchingEquipment.join(', ')} ({item.matchingEquipment.length}/{requiredEquipment.length})</p>
-                    </Park>
-                ))}
-            </ParksContainer>
+
+                            </Exercise>
+                        ))}
+                    </>
+                )}
+            </ExercisesContainer>
+
         </div>
     );
 }
