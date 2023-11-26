@@ -1,22 +1,131 @@
 import styled from 'styled-components';
 
 export const Park = styled.div`
+  position: relative;
+  width: 100%;
+  padding-bottom: 75%; 
   margin: 1em;
-  padding: 1em;
   border: 1px solid #ddd;
   border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px 5px cyan;
+  }
 `;
+
 
 export const ParkName = styled.h2`
-  color: #333;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0.5); 
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  z-index: 1;
 `;
 
+
+
 export const ParkImage = styled.img`
-  max-width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+
+  ${Park}:hover & {
+    filter: brightness(50%);
+  }
+`;
+
+export const ParkButton = styled.button`
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: cyan;
+  }
 `;
 
 export const ParksContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 1em; 
+`;
+
+export const DetailContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: cyan;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+`;
+
+export const DetailImage = styled.img`
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+`;
+
+export const DetailImagesRow = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+`;
+
+export const SmallDetailImage = styled.img`
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+`;
+
+export const EquipmentList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+`;
+
+export const EquipmentItem = styled.li`
+  background-color: darkcyan;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+`;
+
+export const CloseButton = styled.button`
+  background-color: darkcyan;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: cyan;
+  }
 `;

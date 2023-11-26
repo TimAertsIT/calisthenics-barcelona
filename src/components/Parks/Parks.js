@@ -1,37 +1,36 @@
-import { ParkName, ParkImage, Park, ParksContainer } from './Parks.styles';
+import { ParkName, ParkImage, Park, ParksContainer, ParkButton, DetailContainer, EquipmentList, EquipmentItem, DetailImage, CloseButton, DetailImagesRow, SmallDetailImage } from './Parks.styles';
 import data from "../../data.json";
 
 function Parks({ selectedPark, setSelectedPark }) {
     return (
         <div>
             {selectedPark ? (
-                <div>
+                <DetailContainer>
                     <h1>{selectedPark.name}</h1>
-                    <img src={process.env.PUBLIC_URL + selectedPark.image} alt={selectedPark.name} style={{ width: "500px" }} />
-                    <ul>
+                    <DetailImage src={process.env.PUBLIC_URL + selectedPark.image} alt={selectedPark.name} />
+                    <EquipmentList>
                         {selectedPark.equipment.map((equip, index) => (
-                            <li key={index}>{equip}</li>
+                            <EquipmentItem key={index}>{equip}</EquipmentItem>
                         ))}
-                        <p>More info can come here</p>
-                    </ul>
-                    <button onClick={() => setSelectedPark(null)}>
+                    </EquipmentList>
+                    <DetailImagesRow>
+                        <SmallDetailImage src={process.env.PUBLIC_URL + selectedPark.image2} alt={selectedPark.name} />
+                        <SmallDetailImage src={process.env.PUBLIC_URL + selectedPark.image3} alt={selectedPark.name} />
+                        <SmallDetailImage src={process.env.PUBLIC_URL + selectedPark.image4} alt={selectedPark.name} />
+                    </DetailImagesRow>
+                    <CloseButton onClick={() => setSelectedPark(null)}>
                         Close
-                    </button>
-                </div>
+                    </CloseButton>
+                </DetailContainer>
             ) : (
                 <ParksContainer>
                     {data.map((item) => (
                         <Park key={item.id}>
                             <ParkName>{item.name}</ParkName>
                             <ParkImage src={process.env.PUBLIC_URL + item.image} alt={item.name} />
-                            <ul>
-                                {item.equipment.map((equip, index) => (
-                                    <li key={index}>{equip}</li>
-                                ))}
-                            </ul>
-                            <button onClick={() => setSelectedPark(item)}>
+                            <ParkButton onClick={() => setSelectedPark(item)}>
                                 Select this park
-                            </button>
+                            </ParkButton>
                         </Park>
                     ))}
                 </ParksContainer>
@@ -41,6 +40,9 @@ function Parks({ selectedPark, setSelectedPark }) {
 }
 
 export default Parks;
+
+
+
 
 
 

@@ -2,7 +2,10 @@
     {
         "id": 1,
         "name": "Montjuic",
-        "image": "/assets/images/montjuic.png",
+        "image": "/assets/images/montjuic.jpg",
+        "image2": "/assets/images/montjuic2.jpg",
+        "image3": "/assets/images/montjuic3.jpg",
+        "image4": "/assets/images/montjuic4.jpg",
         "equipment": [
             "Bars",
             "Parallels",
@@ -15,7 +18,10 @@
     {
         "id": 2,
         "name": "Gran Via",
-        "image": "/assets/images/granvia.png",
+        "image": "/assets/images/granvia.jpg",
+        "image2": "/assets/images/granvia2.jpg",
+        "image3": "/assets/images/granvia3.jpg",
+        "image4": "/assets/images/granvia4.jpg",
         "equipment": [
             "Push machine",
             "Abs equipment"
@@ -26,7 +32,10 @@
     {
         "id": 3,
         "name": "Poblenou",
-        "image": "/assets/images/poblenou.png",
+        "image": "/assets/images/poblenou.jpg",
+        "image2": "/assets/images/poblenou2.jpg",
+        "image3": "/assets/images/poblenou3.jpg",
+        "image4": "/assets/images/poblenou4.jpg",
         "equipment": [
             "Bars",
             "Parallels",
@@ -39,7 +48,10 @@
     {
         "id": 4,
         "name": "Barceloneta",
-        "image": "/assets/images/barceloneta.png",
+        "image": "/assets/images/barceloneta.jpg",
+        "image2": "/assets/images/barceloneta2.jpg",
+        "image3": "/assets/images/barceloneta3.jpg",
+        "image4": "/assets/images/barceloneta4.jpg",
         "equipment": [
             "Bars",
             "Parallels",
@@ -52,7 +64,10 @@
     {
         "id": 5,
         "name": "Hotel W",
-        "image": "/assets/images/hotelw.png",
+        "image": "/assets/images/whotel.jpg",
+        "image2": "/assets/images/whotel2.jpg",
+        "image3": "/assets/images/whotel3.jpg",
+        "image4": "/assets/images/whotel4.jpg",
         "equipment": [
             "Bars",
             "Parallels",
@@ -65,7 +80,10 @@
     {
         "id": 6,
         "name": "Diagonal",
-        "image": "/assets/images/diagonal.png",
+        "image": "/assets/images/diagonal.jpg",
+        "image2": "/assets/images/diagonal2.jpg",
+        "image3": "/assets/images/diagonal3.jpg",
+        "image4": "/assets/images/diagonal4.jpg",
         "equipment": [
             "Bars",
             "Parallels",
@@ -78,7 +96,10 @@
     {
         "id": 7,
         "name": "Nou Barris",
-        "image": "/assets/images/noubarris.png",
+        "image": "/assets/images/noubarris.jpg",
+        "image2": "/assets/images/noubarris.jpg",
+        "image3": "/assets/images/noubarris.jpg",
+        "image4": "/assets/images/noubarris.jpg",
         "equipment": [
             "Bars",
             "Parallels",

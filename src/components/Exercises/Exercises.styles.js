@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ExercisesContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(5, 1fr); 
     gap: 1em; 
     background: linear-gradient(to bottom, #008080, #00FFFF);
 `;
@@ -22,7 +22,7 @@ export const Exercise = styled.div`
 
 export const ExerciseImage = styled.img`
     width: 100%;
-    height: 40%;
+    height: 30%;
     object-fit: cover;
     filter: brightness(0.9) contrast(1.2);
     margin: 0;
