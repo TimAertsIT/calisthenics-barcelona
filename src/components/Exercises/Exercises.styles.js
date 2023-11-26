@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ExercisesContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1em; 
     background: linear-gradient(to bottom, #008080, #00FFFF);
 `;
@@ -22,14 +22,16 @@ export const Exercise = styled.div`
 
 export const ExerciseImage = styled.img`
     width: 100%;
-    height: 30%;
+    height: auto;
     object-fit: cover;
+    aspect-ratio: 16 / 9;
     filter: brightness(0.9) contrast(1.2);
     margin: 0;
-    padding: o;
+    padding: 0;
     border: 3px solid #008080;
     border-radius: 5px; 
 `;
+
 
 export const ExerciseName = styled.h2`
     color: #008080;
@@ -81,14 +83,50 @@ export const ExerciseTitle = styled.h1`
     display: flex;
     justify-content: center;
     width: auto;
-    margin: 5px;
-    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding: 15px;
     color: white;
     background: linear-gradient(to right, #008080, #00FFFF);
     border: none;
     text-align: center;
     text-transform: uppercase;
+  font-size: 2.5em;
+  font-weight: 600;
+  letter-spacing: 1px;
 `;
+
+export const Trains = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+`;
+
+export const Train = styled.div`
+    background-color: #008080;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 4px;
+`;
+
+export const Equipment = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+`;
+
+export const EquipmentItem = styled.div`
+    background-color: #00FFFF;
+    color: black;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 4px;
+`;
+
+
 
 
 

@@ -1,4 +1,4 @@
-import { NavigationWrapper, StyledDiv } from './Navigation.styles';
+import { NavigationWrapper, StyledDiv, StyledLink } from './Navigation.styles';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const Navigation = ({ isAuthenticated, handleLogout }) => {
@@ -11,22 +11,24 @@ const Navigation = ({ isAuthenticated, handleLogout }) => {
 
     return (
         <NavigationWrapper>
+            <StyledLink to="/" className="home-link">Homepage</StyledLink>
             <StyledDiv>
-                <Link to="/">Homepage</Link>
-                <Link to="/register"><p>Register</p></Link>
+                <StyledLink to="/register">Register</StyledLink>
                 {isAuthenticated ? (
-                    <a href="#" onClick={handleLogout}>
+                    <StyledLink as="a" href="#" onClick={handleLogout}>
                         Logout
-                    </a>
+                    </StyledLink>
                 ) : (
-                    <Link to="/login">
-                        <p>Login</p>
-                    </Link>
+                    <StyledLink to="/login">
+                        Login
+                    </StyledLink>
                 )}
-                <Link to="/mytrainings" onClick={handleMyTrainingsClick}>My Trainings</Link>
+                <StyledLink to="/mytrainings" onClick={handleMyTrainingsClick}>My Trainings</StyledLink>
             </StyledDiv>
         </NavigationWrapper>
     );
 }
 
 export default Navigation;
+
+

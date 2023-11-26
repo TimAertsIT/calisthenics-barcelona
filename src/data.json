@@ -97,9 +97,9 @@
         "id": 7,
         "name": "Nou Barris",
         "image": "/assets/images/noubarris.jpg",
-        "image2": "/assets/images/noubarris.jpg",
-        "image3": "/assets/images/noubarris.jpg",
-        "image4": "/assets/images/noubarris.jpg",
+        "image2": "/assets/images/noubarris2.jpg",
+        "image3": "/assets/images/noubarris3.jpg",
+        "image4": "/assets/images/noubarris4.jpg",
         "equipment": [
             "Bars",
             "Parallels",

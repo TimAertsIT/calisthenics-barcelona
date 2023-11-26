@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import exercises from '../../exercises.json';
-import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer, ExerciseButton, FilterButton, ButtonContainer, ExerciseTitle } from './Exercises.styles';
+import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer, ExerciseButton, FilterButton, ButtonContainer, ExerciseTitle, Trains, Train, Equipment, EquipmentItem } from './Exercises.styles';
 import data from "../../data.json";
 import { ParkName, ParkImage, Park, ParksContainer } from "../Parks/Parks.styles";
 import firebase from "firebase/compat/app";
@@ -110,8 +110,6 @@ function Exercises({ selectedPark, isAuthenticated }) {
                     <Exercise key={item.id}>
                         <ExerciseImage src={item.image} alt={item.name} onClick={() => openModal(item)} />
                         <ExerciseName>{item.name}</ExerciseName>
-                        <p>Trains: {item.trains.join(', ')}</p>
-                        <p>Equipment: {item.equipment.join(', ')}</p>
                         <ExerciseButton onClick={() => {
                             if (!selectedExercises.includes(item)) {
                                 setSelectedExercises([...selectedExercises, item]);

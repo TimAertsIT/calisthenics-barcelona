@@ -9,12 +9,14 @@ export const Park = styled.div`
   border-radius: 4px;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
 
   &:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 15px 5px cyan;
   }
 `;
+
 
 
 export const ParkName = styled.h2`
@@ -39,6 +41,7 @@ export const ParkImage = styled.img`
   height: 100%;
   object-fit: cover;
   transition: all 0.3s ease-in-out;
+  filter: brightness(1.2); 
 
   ${Park}:hover & {
     filter: brightness(50%);
@@ -49,7 +52,7 @@ export const ParkButton = styled.button`
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background-color: blue;
+  background-color: #008080;
   color: white;
   padding: 10px;
   border: none;
@@ -84,6 +87,7 @@ export const DetailImage = styled.img`
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 20px;
+  filter: brightness(1.2);
 `;
 
 export const DetailImagesRow = styled.div`
@@ -98,6 +102,7 @@ export const SmallDetailImage = styled.img`
   height: auto;
   object-fit: cover;
   border-radius: 10px;
+  filter: brightness(1.2);
 `;
 
 export const EquipmentList = styled.ul`
@@ -129,3 +134,31 @@ export const CloseButton = styled.button`
     background-color: cyan;
   }
 `;
+
+export const Title = styled.h1`
+  text-align: center;
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  padding-bottom: 0.3em; 
+`;
+
+export const Description = styled.p`
+  text-align: center;
+  color: #666;
+  font-size: 1.2em;
+  margin-bottom: 2em;
+  line-height: 1.6; 
+  max-width: 900px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  border-top: 1px solid cyan; 
+  padding-top: 0.6em; 
+  border-bottom: 1px solid cyan; 
+  padding-bottom: 0.6em; 
+`;
+
+

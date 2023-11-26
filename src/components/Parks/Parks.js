@@ -1,4 +1,4 @@
-import { ParkName, ParkImage, Park, ParksContainer, ParkButton, DetailContainer, EquipmentList, EquipmentItem, DetailImage, CloseButton, DetailImagesRow, SmallDetailImage } from './Parks.styles';
+import { ParkName, ParkImage, Park, ParksContainer, ParkButton, DetailContainer, EquipmentList, EquipmentItem, DetailImage, CloseButton, DetailImagesRow, SmallDetailImage, Title, Description } from './Parks.styles';
 import data from "../../data.json";
 
 function Parks({ selectedPark, setSelectedPark }) {
@@ -23,17 +23,21 @@ function Parks({ selectedPark, setSelectedPark }) {
                     </CloseButton>
                 </DetailContainer>
             ) : (
-                <ParksContainer>
-                    {data.map((item) => (
-                        <Park key={item.id}>
-                            <ParkName>{item.name}</ParkName>
-                            <ParkImage src={process.env.PUBLIC_URL + item.image} alt={item.name} />
-                            <ParkButton onClick={() => setSelectedPark(item)}>
-                                Select this park
-                            </ParkButton>
-                        </Park>
-                    ))}
-                </ParksContainer>
+                <div>
+                    <Title>Parks</Title>
+                    <Description> Select a park to view available equipment and to filter exercises that can be performed with the available equipment </Description>
+                    <ParksContainer>
+                        {data.map((item) => (
+                            <Park key={item.id}>
+                                <ParkName>{item.name}</ParkName>
+                                <ParkImage src={process.env.PUBLIC_URL + item.image} alt={item.name} />
+                                <ParkButton onClick={() => setSelectedPark(item)}>
+                                    Select
+                                </ParkButton>
+                            </Park>
+                        ))}
+                    </ParksContainer>
+                </div>
             )}
         </div>
     );
