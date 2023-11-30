@@ -6,7 +6,7 @@ function Parks({ selectedPark, setSelectedPark }) {
         <div>
             {selectedPark ? (
                 <DetailContainer>
-                    <h1>{selectedPark.name}</h1>
+                    <Title>{selectedPark.name}</Title>
                     <DetailImage src={process.env.PUBLIC_URL + selectedPark.image} alt={selectedPark.name} />
                     <EquipmentList>
                         {selectedPark.equipment.map((equip, index) => (

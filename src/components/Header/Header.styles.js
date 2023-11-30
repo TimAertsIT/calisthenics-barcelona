@@ -42,7 +42,14 @@ export const StyledHeader = styled.header`
         text-transform: uppercase;
         letter-spacing: 2px;
         font-family: 'Arial', sans-serif; 
+        text-align: center;
+        padding: 0 10px;
+
+        @media (max-width: 600px) {
+            font-size: 2em;
+        }
     }
 `;
+
 
 

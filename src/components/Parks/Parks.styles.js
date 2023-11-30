@@ -10,6 +10,7 @@ export const Park = styled.div`
   overflow: hidden;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
+box-sizing: border-box; 
 
   &:hover {
     transform: scale(1.05);
@@ -69,13 +70,25 @@ export const ParksContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 1em; 
+  padding-left: 15px;
+  padding-right: 15px; 
+  overflow-x: hidden; // This will remove the horizontal scrollbar
+  justify-items: center; // This will center the cards
+  width: 100%; 
+  box-sizing: border-box;
+
+  @media (max-width: 768px) { // This is a common breakpoint for mobile devices
+    grid-template-columns: 1fr; // On screens smaller than 768px wide, make it 1 column
+  }
 `;
+
+
+
 
 export const DetailContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: cyan;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -86,6 +99,8 @@ export const DetailImage = styled.img`
   height: auto;
   object-fit: cover;
   border-radius: 10px;
+  margin-top: 20px;
+  border: 2px solid cyan;
   margin-bottom: 20px;
   filter: brightness(1.2);
 `;
@@ -95,15 +110,26 @@ export const DetailImagesRow = styled.div`
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
+  margin-top: 20px;
+  @media (max-width: 768px) { 
+    flex-direction: column; 
+    align-items: center;
+  }
 `;
+
 
 export const SmallDetailImage = styled.img`
   width: 30%;
   height: auto;
   object-fit: cover;
+  border: 2px solid cyan;
   border-radius: 10px;
   filter: brightness(1.2);
+ @media (max-width: 768px) { 
+    width: 80%; 
+  }
 `;
+
 
 export const EquipmentList = styled.ul`
   display: flex;
@@ -119,6 +145,7 @@ export const EquipmentItem = styled.li`
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
+  text-transform: uppercase;
 `;
 
 export const CloseButton = styled.button`
@@ -128,6 +155,7 @@ export const CloseButton = styled.button`
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
   transition: background-color 0.3s ease-in-out;
 
   &:hover {
@@ -140,6 +168,7 @@ export const Title = styled.h1`
   color: #333;
   font-size: 2.5em;
   margin-bottom: 0.5em;
+  margin-top: 1em;
   font-weight: 600; 
   text-transform: uppercase; 
   letter-spacing: 1px; 

@@ -4,7 +4,14 @@ export const ExercisesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr); 
   gap: 1em; 
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr); 
+  }
 `;
+
+
 
 export const Exercise = styled.div`
   position: relative;
@@ -15,13 +22,19 @@ export const Exercise = styled.div`
   border-radius: 4px;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
   &:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 15px 5px cyan;
   }
+
+  @media (max-width: 768px) {
+    width: calc(100% - 2em);
+  }
 `;
+
 
 
 export const ExerciseImage = styled.img`
@@ -89,6 +102,10 @@ export const FilterButton = styled.button`
     &:hover {
         background-color: #00FFFF;
     }
+   @media (max-width: 768px) { 
+        margin-top: 5px;
+        margin-bottom: 5px; 
+    }
 `;
 
 export const ButtonContainer = styled.div`
@@ -101,7 +118,7 @@ export const ExerciseTitle = styled.h1`
     display: flex;
     justify-content: center;
     width: auto;
-    margin-top: 30px;
+    margin-top: 45px;
     margin-bottom: 15px;
     padding: 15px;
     color: white;
@@ -148,7 +165,7 @@ export const Description = styled.p`
   text-align: center;
   color: #666;
   font-size: 1.2em;
-  margin-top: 50px; 
+  margin-top: 35px; 
   line-height: 1.6; 
   max-width: 900px; 
   margin-left: auto; 

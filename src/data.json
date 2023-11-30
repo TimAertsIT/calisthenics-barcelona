@@ -9,8 +9,12 @@
         "equipment": [
             "Bars",
             "Parallels",
-            "Low pushup bar",
-            "Rings"
+            "Rings",
+            "Lower bar",
+            "Sit-up benches",
+            "Horizontal ladder",
+            "Vertical ladder",
+            "Jump box set"
         ],
         "lat": 41.36642829366415,
         "lng": 2.150726834595633
@@ -23,8 +27,15 @@
         "image3": "/assets/images/granvia3.jpg",
         "image4": "/assets/images/granvia4.jpg",
         "equipment": [
-            "Push machine",
-            "Abs equipment"
+            "Rings",
+            "Sit-up benches",
+            "Bars",
+            "Parallels",
+            "Horizontal ladder",
+            "Vertical ladder",
+            "Lower bar",
+            "Jump box set",
+            "Gym machines"
         ],
         "lat": 41.405279542323754,
         "lng": 2.189012686127299
@@ -39,8 +50,10 @@
         "equipment": [
             "Bars",
             "Parallels",
-            "Push machine",
-            "Abs equipment"
+            "Sit-up benches",
+            "Horizontal ladder",
+            "Vertical ladder",
+            "Lower bar"
         ],
         "lat": 41.40078102145506,
         "lng": 2.2138070261846683
@@ -55,8 +68,10 @@
         "equipment": [
             "Bars",
             "Parallels",
-            "Push machine",
-            "Abs equipment"
+            "Horizontal ladder",
+            "Rings",
+            "Sit-up benches",
+            "Pole ladder"
         ],
         "lat": 41.38183392280738,
         "lng": 2.1961688198779443
@@ -71,8 +86,9 @@
         "equipment": [
             "Bars",
             "Parallels",
-            "Push machine",
-            "Abs equipment"
+            "Horizontal ladder",
+            "Sit-up benches",
+            "Pole"
         ],
         "lat": 41.369983143348215,
         "lng": 2.189549128043317
@@ -87,8 +103,8 @@
         "equipment": [
             "Bars",
             "Parallels",
-            "Push machine",
-            "Abs equipment"
+            "Vertical ladder",
+            "Lower bar"
         ],
         "lat": 41.40330393331334,
         "lng": 2.1846165455045683
@@ -101,10 +117,15 @@
         "image3": "/assets/images/noubarris3.jpg",
         "image4": "/assets/images/noubarris4.jpg",
         "equipment": [
+            "Pyramid with rope",
+            "Sit-up benches",
+            "Horizontal ladder",
+            "Vertical ladder",
             "Bars",
+            "Lower bar",
+            "Floor web",
             "Parallels",
-            "Push machine",
-            "Abs equipment"
+            "Rings"
         ],
         "lat": 41.45267393362481,
         "lng": 2.1942475957549235
