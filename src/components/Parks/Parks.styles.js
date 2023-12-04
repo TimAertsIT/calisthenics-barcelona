@@ -72,13 +72,13 @@ export const ParksContainer = styled.div`
   gap: 1em; 
   padding-left: 15px;
   padding-right: 15px; 
-  overflow-x: hidden; // This will remove the horizontal scrollbar
-  justify-items: center; // This will center the cards
+  overflow-x: hidden; 
+  justify-items: center; 
   width: 100%; 
   box-sizing: border-box;
 
-  @media (max-width: 768px) { // This is a common breakpoint for mobile devices
-    grid-template-columns: 1fr; // On screens smaller than 768px wide, make it 1 column
+  @media (max-width: 768px) { 
+    grid-template-columns: 1fr; 
   }
 `;
 

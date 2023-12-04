@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import exercises from '../../exercises.json';
-import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer, ExerciseButton, FilterButton, ButtonContainer, ExerciseTitle, Trains, Train, Equipment, EquipmentItem, Description, ModalContainer, ExerciseText } from './Exercises.styles';
+import { ExerciseName, ExerciseImage, Exercise, ExercisesContainer, ExerciseButton, FilterButton, ButtonContainer, ExerciseTitle, Trains, Train, Equipment, EquipmentItem, Description, ModalContainer, ExerciseText, CloseButton, SelectedExerciseCard, SelectedExerciseEquipment, SelectedExerciseName, SelectedExercisesContainer, SaveButton, ListNameInput, RemoveButton } from './Exercises.styles';
 import data from "../../data.json";
 import { ParkName, ParkImage, Park, ParksContainer } from "../Parks/Parks.styles";
 import firebase from "firebase/compat/app";
@@ -22,16 +22,14 @@ function Exercises({ selectedPark, isAuthenticated }) {
         measurementId: "G-1G0DJ4K587"
     };
 
-    const [modalIsOpen, setModalIsOpen] = useState(false);
     const [currentExercise, setCurrentExercise] = useState(null);
 
-    const openModal = (exercise) => {
+    const openExercise = (exercise) => {
         setCurrentExercise(exercise);
-        setModalIsOpen(true);
     }
 
-    const closeModal = () => {
-        setModalIsOpen(false);
+    const closeExercise = () => {
+        setCurrentExercise(null);
     }
 
     const app = initializeApp(firebaseConfig);
@@ -111,74 +109,97 @@ function Exercises({ selectedPark, isAuthenticated }) {
             </ButtonContainer>
             <ExercisesContainer>
                 {filteredExercises.map((item) => (
-                    <Exercise key={item.id}>
-                        <ExerciseImage src={item.image} alt={item.name} onClick={() => openModal(item)} />
-                        <ExerciseName>{item.name}</ExerciseName>
-                        <ExerciseButton onClick={() => {
-                            if (!selectedExercises.includes(item)) {
-                                setSelectedExercises([...selectedExercises, item]);
-                            }
-                        }}>Add</ExerciseButton>
+                    <Exercise key={item.id} isOpen={currentExercise === item}>
+                        {currentExercise === item ? (
+                            <>
+                                <div style={{
+                                    position: 'relative',
+                                    overflow: 'hidden',
+                                    paddingTop: '56.25%', /* 16:9 Aspect Ratio */
+                                    width: '100%', /* Adjust width and height to match Exercise card */
+                                    height: '100%',
+                                }}>
+                                    <CloseButton onClick={closeExercise}>Close</CloseButton>
+                                    <iframe
+                                        style={{
+                                            position: 'absolute',
+                                            top: '0',
+                                            left: '0',
+                                            width: '100%',
+                                            height: '50%',
+                                        }}
+                                        src={`https://www.youtube.com/embed/${currentExercise.url.split('https://youtu.be/')[1]}`}
+                                        title={currentExercise.name}
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    />
+                                </div>
+                                <div style={{ position: 'relative' }}>
+                                    <button style={{ zIndex: 4 }} onClick={closeExercise}>Close</button>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <ExerciseImage src={item.image} alt={item.name} onClick={() => openExercise(item)} />
+                                <ExerciseName>{item.name}</ExerciseName>
+                                <ExerciseButton onClick={() => {
+                                    if (!selectedExercises.includes(item)) {
+                                        setSelectedExercises([...selectedExercises, item]);
+                                    }
+                                }}>Add</ExerciseButton>
+                            </>
+                        )}
                     </Exercise>
                 ))}
             </ExercisesContainer>
 
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                contentLabel="Exercise Modal"
-            >
-                {currentExercise && (
-                    <>
-                        <h2>{currentExercise.name}</h2>
-                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${currentExercise.url.split('https://youtu.be/')[1]}`} title={currentExercise.name} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <button onClick={closeModal}>Close</button>
-                    </>
-                )}
-            </Modal>
 
+            {selectedExercises.length > 0 && (
+                <div>
+                    <ExerciseTitle>Selected Exercises</ExerciseTitle>
+                    <Description> Add exercises to your own training routine and save them to your personal "My Trainings" page </Description>
+                    <SelectedExercisesContainer>
+                        {selectedExercises.map((exercise, index) => (
+                            <SelectedExerciseCard key={index}>
+                                <SelectedExerciseName>{exercise.name}</SelectedExerciseName>
+                                <RemoveButton onClick={() => {
+                                    const newSelectedExercises = [...selectedExercises];
+                                    newSelectedExercises.splice(index, 1);
+                                    setSelectedExercises(newSelectedExercises);
+                                }}>Remove</RemoveButton>
+                            </SelectedExerciseCard>
+                        ))}
+                        <div>
+                            <SaveButton onClick={handleSubmit}>Save</SaveButton>
+                            <ListNameInput type="text" value={listName} onChange={e => setListName(e.target.value)} placeholder="Enter list name" />
+                        </div>
+                    </SelectedExercisesContainer>
+                </div>
+            )}
 
-            <div>
-                {selectedExercises.length > 0 && <ExerciseTitle>Selected Exercises</ExerciseTitle>}
-                {selectedExercises.map((exercise, index) => (
-                    <div key={index}>
-                        <p>{exercise.name}</p>
-                        <p>{exercise.equipment}</p>
-                        <button onClick={() => {
-                            const newSelectedExercises = [...selectedExercises];
-                            newSelectedExercises.splice(index, 1);
-                            setSelectedExercises(newSelectedExercises);
-                        }}>Remove</button>
-                    </div>
-                ))}
-                {selectedExercises.length > 0 &&
-                    <div>
-                        <button onClick={handleSubmit}>Save</button>
-                        <input type="text" value={listName} onChange={e => setListName(e.target.value)} placeholder="Enter list name" />
-                    </div>
-                }
-            </div>
             <ExerciseTitle>Recommended parks</ExerciseTitle>
             <ExercisesContainer>
                 {recommendedParks.length > 0 && (
                     <>
-                        {recommendedParks.map((item) => (
-                            <Exercise key={item.id}>
-                                <ExerciseName>{item.name}</ExerciseName>
-                                <ExerciseImage src={process.env.PUBLIC_URL + item.image} alt={item.name} />
-                                <ul>
-                                    {item.equipment.map((equip, index) => (
-                                        <li key={index}>{equip}</li>
-                                    ))}
-                                </ul>
-                                <ExerciseText>Matching Equipment: {item.matchingEquipment.join(', ')} ({item.matchingEquipment.length}/{requiredEquipment.length})</ExerciseText>
-
-
-                            </Exercise>
-                        ))}
+                        {recommendedParks
+                            .sort((a, b) => b.matchingEquipment.length - a.matchingEquipment.length)
+                            .map((item) => (
+                                <Exercise key={item.id}>
+                                    <ExerciseName>{item.name}</ExerciseName>
+                                    <ExerciseImage src={process.env.PUBLIC_URL + item.image} alt={item.name} />
+                                    <ul>
+                                        {item.equipment.map((equip, index) => (
+                                            <li key={index}>{equip}</li>
+                                        ))}
+                                    </ul>
+                                    <ExerciseText>Matching Equipment: {item.matchingEquipment.join(', ')} ({item.matchingEquipment.length}/{requiredEquipment.length})</ExerciseText>
+                                </Exercise>
+                            ))}
                     </>
                 )}
             </ExercisesContainer>
+
 
         </div>
     );
