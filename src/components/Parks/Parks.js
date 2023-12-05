@@ -7,8 +7,7 @@ function Parks({ selectedPark, setSelectedPark }) {
             {selectedPark ? (
                 <DetailContainer>
                     <Title>{selectedPark.name}</Title>
-                    <DetailImage src={`${process.env.PUBLIC_URL}/assets/images/${selectedPark.image}`} alt={selectedPark.name} />
-
+                    <DetailImage src={`./assets/images/${selectedPark.image}`} alt={selectedPark.name} />
                     <EquipmentList>
                         {selectedPark.equipment.map((equip, index) => (
                             <EquipmentItem key={index}>{equip}</EquipmentItem>
