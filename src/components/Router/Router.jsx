@@ -7,7 +7,7 @@ import MyTrainings from '../../pages/mytrainings';
 const Router = ({ isAuthenticated,
     setIsAuthenticated, handleLogout
 }) =>
-    <BrowserRouter>
+    <BrowserRouter >
         <Routes>
             <Route index element={<Homepage handleLogout={handleLogout} isAuthenticated={isAuthenticated} />} />
             <Route path="/register" element={<RegisterPage isAuthenticated={isAuthenticated} handleLogout={handleLogout} />} />
