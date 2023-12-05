@@ -22,7 +22,7 @@
     {
         "id": 2,
         "name": "Gran Via",
-        "image": "/assets/images/granvia.jpg",
+        "image": "./assets/images/granvia.jpg",
         "image2": "/assets/images/granvia2.jpg",
         "image3": "/assets/images/granvia3.jpg",
         "image4": "/assets/images/granvia4.jpg",
