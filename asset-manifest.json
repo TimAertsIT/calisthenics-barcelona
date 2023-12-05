@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/calisthenics-barcelona/static/css/main.2e662a65.css",
+    "main.js": "/calisthenics-barcelona/static/js/main.a6a4b5d5.js",
+    "index.html": "/calisthenics-barcelona/index.html",
+    "main.2e662a65.css.map": "/calisthenics-barcelona/static/css/main.2e662a65.css.map",
+    "main.a6a4b5d5.js.map": "/calisthenics-barcelona/static/js/main.a6a4b5d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e662a65.css",
+    "static/js/main.a6a4b5d5.js"
+  ]
+}
