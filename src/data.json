@@ -3,9 +3,9 @@
         "id": 1,
         "name": "Montjuic",
         "image": "/assets/images/montjuic.JPG",
-        "image2": "/assets/images/montjuic2.jpg",
-        "image3": "/assets/images/montjuic3.jpg",
-        "image4": "/assets/images/montjuic4.jpg",
+        "image2": "/assets/images/montjuic2.JPG",
+        "image3": "/assets/images/montjuic3.JPG",
+        "image4": "/assets/images/montjuic4.JPG",
         "equipment": [
             "Bars",
             "Parallels",
@@ -22,10 +22,10 @@
     {
         "id": 2,
         "name": "Gran Via",
-        "image": "./assets/images/granvia.jpg",
-        "image2": "/assets/images/granvia2.jpg",
-        "image3": "/assets/images/granvia3.jpg",
-        "image4": "/assets/images/granvia4.jpg",
+        "image": "/assets/images/granvia.JPG",
+        "image2": "/assets/images/granvia2.JPG",
+        "image3": "/assets/images/granvia3.JPG",
+        "image4": "/assets/images/granvia4.JPG",
         "equipment": [
             "Rings",
             "Sit-up benches",
@@ -43,10 +43,10 @@
     {
         "id": 3,
         "name": "Poblenou",
-        "image": "/assets/images/poblenou.jpg",
-        "image2": "/assets/images/poblenou2.jpg",
-        "image3": "/assets/images/poblenou3.jpg",
-        "image4": "/assets/images/poblenou4.jpg",
+        "image": "/assets/images/poblenou.JPG",
+        "image2": "/assets/images/poblenou2.JPG",
+        "image3": "/assets/images/poblenou3.JPG",
+        "image4": "/assets/images/poblenou4.JPG",
         "equipment": [
             "Bars",
             "Parallels",
@@ -61,10 +61,10 @@
     {
         "id": 4,
         "name": "Barceloneta",
-        "image": "/assets/images/barceloneta.jpg",
-        "image2": "/assets/images/barceloneta2.jpg",
-        "image3": "/assets/images/barceloneta3.jpg",
-        "image4": "/assets/images/barceloneta4.jpg",
+        "image": "/assets/images/barceloneta.JPG",
+        "image2": "/assets/images/barceloneta2.JPG",
+        "image3": "/assets/images/barceloneta3.JPG",
+        "image4": "/assets/images/barceloneta4.JPG",
         "equipment": [
             "Bars",
             "Parallels",
@@ -79,10 +79,10 @@
     {
         "id": 5,
         "name": "Hotel W",
-        "image": "/assets/images/whotel.jpg",
-        "image2": "/assets/images/whotel2.jpg",
-        "image3": "/assets/images/whotel3.jpg",
-        "image4": "/assets/images/whotel4.jpg",
+        "image": "/assets/images/whotel.JPG",
+        "image2": "/assets/images/whotel2.JPG",
+        "image3": "/assets/images/whotel3.JPG",
+        "image4": "/assets/images/whotel4.JPG",
         "equipment": [
             "Bars",
             "Parallels",
@@ -96,10 +96,10 @@
     {
         "id": 6,
         "name": "Diagonal",
-        "image": "/assets/images/diagonal.jpg",
-        "image2": "/assets/images/diagonal2.jpg",
-        "image3": "/assets/images/diagonal3.jpg",
-        "image4": "/assets/images/diagonal4.jpg",
+        "image": "/assets/images/diagonal.JPG",
+        "image2": "/assets/images/diagonal2.JPG",
+        "image3": "/assets/images/diagonal3.JPG",
+        "image4": "/assets/images/diagonal4.JPG",
         "equipment": [
             "Bars",
             "Parallels",
@@ -112,10 +112,10 @@
     {
         "id": 7,
         "name": "Nou Barris",
-        "image": "/assets/images/noubarris.jpg",
-        "image2": "/assets/images/noubarris2.jpg",
-        "image3": "/assets/images/noubarris3.jpg",
-        "image4": "/assets/images/noubarris4.jpg",
+        "image": "/assets/images/noubarris.JPG",
+        "image2": "/assets/images/noubarris2.JPG",
+        "image3": "/assets/images/noubarris3.JPG",
+        "image4": "/assets/images/noubarris4.JPG",
         "equipment": [
             "Pyramid with rope",
             "Sit-up benches",
