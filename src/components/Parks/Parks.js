@@ -30,7 +30,7 @@ function Parks({ selectedPark, setSelectedPark }) {
                         {data.map((item) => (
                             <Park key={item.id}>
                                 <ParkName>{item.name}</ParkName>
-                                <ParkImage src={process.env.PUBLIC_URL + item.image} alt={item.name} />
+                                <ParkImage src={item.image} alt={item.name} />
                                 <ParkButton onClick={() => setSelectedPark(item)}>
                                     Select
                                 </ParkButton>
