@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, query, where, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { db, auth } from '../../Firebase';
-import { StyledDiv } from './MyTrainings.styles';
+import { TrainingsContainer, ExerciseListCard, ExerciseListName, ExerciseListDate, ExerciseName, RemoveButton } from './MyTrainings.styles';
 
 const Trainings = ({ isAuthenticated, handleLogout }) => {
     const [userExercises, setUserExercises] = useState([]);
@@ -16,8 +16,8 @@ const Trainings = ({ isAuthenticated, handleLogout }) => {
                 const querySnapshot = await getDocs(q);
                 let exercises = [];
                 querySnapshot.forEach((doc) => {
-                    console.log(doc.data()); // log the data
-                    exercises.push(doc.data());
+                    console.log(doc.data());
+                    exercises.push({ id: doc.id, ...doc.data() });
                 });
                 setUserExercises(exercises);
             }
@@ -28,21 +28,32 @@ const Trainings = ({ isAuthenticated, handleLogout }) => {
         }
     }, [isAuthenticated]);
 
+    const removeExercise = async (id) => {
+        await deleteDoc(doc(db, "exerciseLists", id));
+        setUserExercises(userExercises.filter(exercise => exercise.id !== id));
+    }
+
     return (
-        <div>
+        <TrainingsContainer>
             {userExercises.map((exerciseList, index) => (
-                <StyledDiv key={index}>
-                    <h2>{exerciseList.name}</h2>
-                    <h2>{exerciseList.date}</h2>
+                <ExerciseListCard key={index}>
+                    <ExerciseListName>{exerciseList.name}</ExerciseListName>
+                    <ExerciseListDate>{exerciseList.date}</ExerciseListDate>
                     {exerciseList.exercises.map((exercise, index) => (
-                        <p key={index}>{exercise.name}</p>
+                        <ExerciseName key={index}>
+                            <input type="checkbox" />
+                            {exercise.name}
+                        </ExerciseName>
                     ))}
-                </StyledDiv>
+                    <RemoveButton onClick={() => removeExercise(exerciseList.id)}>Remove</RemoveButton>
+                </ExerciseListCard>
             ))}
-        </div>
+        </TrainingsContainer>
     );
-};
+
+}
 
 export default Trainings;
+
 
 
