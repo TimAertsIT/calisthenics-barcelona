@@ -1,6 +1,7 @@
 import Homepage from "./pages/homepage";
 import Router from "./components/Router/Router";
 import { useState, useEffect } from "react";
+import GlobalStyle from "./globalStyles";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(JSON.parse(localStorage.getItem("isAuthenticated")) || false
@@ -13,13 +14,16 @@ function App() {
     setIsAuthenticated(false);
   };
   return (
-    <div>
-      <Router
-        isAuthenticated={isAuthenticated}
-        setIsAuthenticated={setIsAuthenticated}
-        handleLogout={handleLogout}
-      />
-    </div>
+    <>
+      <GlobalStyle />
+      <div>
+        <Router
+          isAuthenticated={isAuthenticated}
+          setIsAuthenticated={setIsAuthenticated}
+          handleLogout={handleLogout}
+        />
+      </div>
+    </>
   );
 }
 

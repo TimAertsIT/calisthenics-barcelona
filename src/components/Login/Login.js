@@ -1,4 +1,4 @@
-import { StyledBackground, StyledCard, StyledH1, StyledP, StyledInput, StyledButtonInput2 } from './Login.styles';
+import { StyledBackground, StyledCard, StyledH1, StyledP, StyledInput, StyledButton } from './Login.styles';
 import { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from "firebase/app";
@@ -71,7 +71,7 @@ const Login = ({ setIsAuthenticated }) => {
                         value={password}
                         onChange={handlePasswordChange}
                     />
-                    <StyledButtonInput2 onClick={handleLogin}>Login</StyledButtonInput2>
+                    <StyledButton onClick={handleLogin}>Login</StyledButton>
                 </StyledCard>
             </StyledBackground>
         </>
