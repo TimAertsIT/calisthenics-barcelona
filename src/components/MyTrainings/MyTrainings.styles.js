@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const TrainingsContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-gap: 50px;
-    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
     background-color: #2c2c2c;
     border-radius: 10px;
     padding: 20px 50px;
@@ -27,9 +27,10 @@ export const ExerciseListCard = styled.div`
     align-items: center;
     background-color: #3d3d3d;
     padding: 10px 20px;
-    margin: 0 -20px;
+    margin: 20px 0;
     border-radius: 5px;
     width: 100%;
+    max-width: 280px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     transition: transform 0.3s ease-in-out;
 
@@ -38,12 +39,11 @@ export const ExerciseListCard = styled.div`
     }
 
     @media (max-width: 768px) {
-        margin: 0;
         width: 80%; 
         padding: 10px 5px;
         box-sizing: border-box; 
         justify-content: center; 
-        align-items: flex-start;
+        align-items: center;
     }
 `;
 
@@ -52,12 +52,21 @@ export const ExerciseListName = styled.h2`
     font-size: 18px;
     text-transform: uppercase; 
     border-bottom: 2px solid #ff0000;
+    text-align: center;
 `;
 
 export const ExerciseListDate = styled.h2`
     color: #ffffff;
     font-size: 16px;
     border-bottom: 1px solid #ffffff;
+    text-align: center;
+`;
+
+export const ExerciseNameWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 `;
 
 export const ExerciseName = styled.div`
@@ -65,12 +74,19 @@ export const ExerciseName = styled.div`
     font-size: 16px;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: center; 
+    justify-content: flex-start;
+    margin-left: 50px; 
 
     input[type="checkbox"] {
         margin-right: 10px;
     }
+
+     @media (max-width: 768px) {
+       margin-left: 20px; 
+    }
 `;
+
 
 export const RemoveButton = styled.button`
     color: #ffffff;
@@ -86,6 +102,7 @@ export const RemoveButton = styled.button`
         background-color: #cc0000;
     }
 `;
+
 
 
 

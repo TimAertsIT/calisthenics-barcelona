@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getFirestore, collection, query, where, getDocs, doc, deleteDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { db, auth } from '../../Firebase';
-import { TrainingsContainer, ExerciseListCard, ExerciseListName, ExerciseListDate, ExerciseName, RemoveButton } from './MyTrainings.styles';
+import { TrainingsContainer, ExerciseListCard, ExerciseListName, ExerciseListDate, ExerciseName, RemoveButton, ExerciseNameWrapper } from './MyTrainings.styles';
 
 const Trainings = ({ isAuthenticated, handleLogout }) => {
     const [userExercises, setUserExercises] = useState([]);
@@ -39,16 +39,19 @@ const Trainings = ({ isAuthenticated, handleLogout }) => {
                 <ExerciseListCard key={index}>
                     <ExerciseListName>{exerciseList.name}</ExerciseListName>
                     <ExerciseListDate>{exerciseList.date}</ExerciseListDate>
-                    {exerciseList.exercises.map((exercise, index) => (
-                        <ExerciseName key={index}>
-                            <input type="checkbox" />
-                            {exercise.name}
-                        </ExerciseName>
-                    ))}
+                    <ExerciseNameWrapper>
+                        {exerciseList.exercises.map((exercise, index) => (
+                            <ExerciseName key={index}>
+                                <input type="checkbox" />
+                                {exercise.name}
+                            </ExerciseName>
+                        ))}
+                    </ExerciseNameWrapper>
                     <RemoveButton onClick={() => removeExercise(exerciseList.id)}>Remove</RemoveButton>
                 </ExerciseListCard>
             ))}
         </TrainingsContainer>
+
     );
 
 }
